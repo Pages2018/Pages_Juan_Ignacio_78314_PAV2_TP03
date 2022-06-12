@@ -17,7 +17,7 @@ export class ArticulosFamiliasService {
   }
  
   get() {
-    return this.httpClient.get< /*ArticuloFamilia*/[]>(this.resourceUrl);
+    return this.httpClient.get< /*ArticulosFamilia*/[]>(this.resourceUrl);
   }
 }
  

@@ -4,6 +4,8 @@ import { ArticuloFamilia } from "../../models/articulo-familia";
 import { MockArticulosService } from "../../services/mock-articulos.service";
 import { MockArticulosFamiliasService } from "../../services/mock-articulos-familias.service";
 import {  FormGroup, FormControl, Validators } from "@angular/forms";
+import { ArticulosService } from "../../services/articulos.service";
+import { ArticulosFamiliasService} from "../../services/articulos-familias.service";
  
 @Component({
   selector: "app-articulos",
@@ -56,9 +58,12 @@ export class ArticulosComponent implements OnInit {
  
  
   constructor(
-    private articulosService: MockArticulosService,
-    private articulosFamiliasService: MockArticulosFamiliasService,
-  ) {}
+    //private articulosService: MockArticulosService,
+    //private articulosFamiliasService: MockArticulosFamiliasService,
+    private articulosService: ArticulosService,
+    private articulosFamiliasService: ArticulosFamiliasService,
+  ){}
+
  
   ngOnInit() {
     this.GetFamiliasArticulos();
@@ -180,6 +185,12 @@ export class ArticulosComponent implements OnInit {
   ImprimirListado() {
     alert('Sin desarrollar...');
   }
+
+  GetArticuloFamiliaNombre(Id:number) {
+    var Nombre = this.Familias.find(x => x.IdArticuloFamilia === Id)?.Nombre;
+    return Nombre;
+  }
+
 
   
 

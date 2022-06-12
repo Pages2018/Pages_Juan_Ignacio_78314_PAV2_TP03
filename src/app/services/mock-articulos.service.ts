@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { of } from "rxjs";
 import { Articulo, Articulos } from "../models/articulo";
- 
+
 @Injectable({
   providedIn: "root"
 })
