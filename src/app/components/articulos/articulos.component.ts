@@ -30,6 +30,22 @@ export class ArticulosComponent implements OnInit {
   RegistrosTotal: number = 1;
   Familias: ArticuloFamilia[]|null = null;
   Pagina = 1; // inicia pagina 1
+  
+  FormBusqueda = new FormGroup({
+    Nombre: new FormControl(null),
+    Activo: new FormControl(null),
+  });
+
+  FormRegistro = new FormGroup({
+    IdArticulo: new FormControl(0),
+    Nombre: new FormControl(''),
+    Precio: new FormControl(null),
+    Stock: new FormControl(null),
+    CodigoDeBarra: new FormControl (''),
+    IdArticuloFamilia: new FormControl(''),
+    FechaAlta: new FormControl(''),
+    Activo: new FormControl(true),
+  });
  
   // opciones del combo activo
   OpcionesActivo = [
@@ -70,8 +86,8 @@ export class ArticulosComponent implements OnInit {
       });
   }
  
-   // Obtengo un registro especifico según el Id
-   BuscarPorId(Item:Articulo, AccionABMC:string ) {
+  // Obtengo un registro especifico según el Id
+  BuscarPorId(Item:Articulo, AccionABMC:string ) {
  
     window.scroll(0, 0); // ir al incio del scroll
  
@@ -87,6 +103,7 @@ export class ArticulosComponent implements OnInit {
       this.AccionABMC = AccionABMC;
     });
   }
+
 
  
   Consultar(Item:Articulo) {
@@ -164,21 +181,7 @@ export class ArticulosComponent implements OnInit {
     alert('Sin desarrollar...');
   }
 
-  FormBusqueda = new FormGroup({
-    Nombre: new FormControl(null),
-    Activo: new FormControl(null),
-  });
-
-  FormRegistro = new FormGroup({
-    IdArticulo: new FormControl(0),
-    Nombre: new FormControl(''),
-    Precio: new FormControl(null),
-    Stock: new FormControl(null),
-    CodigoDeBarra: new FormControl (''),
-    IdArticuloFamilia: new FormControl(''),
-    FechaAlta: new FormControl(''),
-    Activo: new FormControl(true),
-  });
+  
 
  
 }
