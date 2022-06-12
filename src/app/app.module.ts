@@ -10,8 +10,9 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { InicioComponent} from './components/inicio/inicio.component';
 import { ArticulosFamiliasComponent} from './components/articulos-familias/articulos-familias.component';
+import { ReactiveFormsModule } from "@angular/forms";
 @NgModule({
-  imports: [ BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot([{path:'menu', component: MenuComponent},
+  imports: [ BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, RouterModule.forRoot([{path:'menu', component: MenuComponent},
     { path: '', redirectTo: '/inicio', pathMatch: 'full' },
     { path: 'inicio', component: InicioComponent },
     { path: 'articulosfamilias', component: ArticulosFamiliasComponent },
