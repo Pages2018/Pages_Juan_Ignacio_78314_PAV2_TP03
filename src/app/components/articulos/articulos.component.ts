@@ -137,6 +137,10 @@ export class ArticulosComponent implements OnInit {
  
   // grabar tanto altas como modificaciones
   Grabar() {
+
+    // verificar que los validadores esten OK
+    if (this.FormRegistro.invalid) {
+    return;}
  
     //hacemos una copia de los datos del formulario, para modificar la fecha y luego enviarlo al servidor
     const itemCopy = { ...this.FormRegistro.value };
