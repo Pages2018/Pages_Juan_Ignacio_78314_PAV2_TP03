@@ -106,7 +106,10 @@
             Nombre <span class="text-danger">*</span>
         </label>
         <div class="col-sm-6">
-        <input type="text" class="form-control"   formControlName="Nombre"/>
+        <input type="text" class="form-control" formControlName="Nombre" />
+      <div class="text-danger" *ngIf="FormRegistro.controls['Nombre'].hasError('required')">
+          Dato requerido.
+      </div>
         </div>
     </div>
 
@@ -116,7 +119,10 @@
             Precio <span class="text-danger">*</span>
         </label>
         <div class="col-sm-6">
-        <input type="text" class="form-control"   formControlName="Precio"/>
+        <input type="text" class="form-control" formControlName="Precio" />
+      <div class="text-danger" *ngIf="FormRegistro.controls['Precio'].hasError('required')">
+          Dato requerido.
+      </div>
         </div>
     </div>
 
@@ -127,7 +133,10 @@
             Stock <span class="text-danger">*</span>
         </label>
         <div class="col-sm-6">
-        <input type="text" class="form-control"   formControlName="Stock"/>
+        <input type="text" class="form-control" formControlName="Stock" />
+      <div class="text-danger" *ngIf="FormRegistro.controls['Stock'].hasError('required')">
+          Dato requerido.
+      </div>
 
         </div>
     </div>
@@ -138,7 +147,10 @@
             Codigo De Barra <span class="text-danger">*</span>
         </label>
         <div class="col-sm-6">
-        <input type="text" class="form-control"   formControlName="CodigoDeBarra"/>
+        <input type="text" class="form-control" formControlName="CodigoDeBarra" />
+      <div class="text-danger" *ngIf="FormRegistro.controls['CodigoDeBarra'].hasError('required')">
+          Dato requerido.
+      </div>
 
         </div>
     </div>
@@ -163,7 +175,10 @@
             Fecha de alta <span class="text-danger">*</span>
         </label>
         <div class="col-sm-6">
-        <input type="text" class="form-control"   formControlName="FechaAlta"/>
+        <input type="text" class="form-control" formControlName="FechaAlta" />
+      <div class="text-danger" *ngIf="FormRegistro.controls['FechaAlta'].hasError('required')">
+          Dato requerido.
+      </div>
         </div>
     </div>
 
