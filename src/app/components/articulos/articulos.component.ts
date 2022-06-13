@@ -32,6 +32,7 @@ export class ArticulosComponent implements OnInit {
   RegistrosTotal: number = 1;
   Familias: ArticuloFamilia[]|null = null;
   Pagina = 1; // inicia pagina 1
+  submitted = Fasle;
   
   FormBusqueda = new FormGroup({
     Nombre: new FormControl(null),
@@ -100,6 +101,8 @@ export class ArticulosComponent implements OnInit {
   Agregar() {
     this.AccionABMC = "A";
     this.FormRegistro.reset({ Activo: true, IdArticulo: 0 });
+    this.submitted = false;
+    this.FormRegistro.markAsUntouched();  // funcionalidad ya incluida en el FormRegistro.Reset…
   }
 
  
@@ -144,6 +147,8 @@ export class ArticulosComponent implements OnInit {
       return;
     }
     this.BuscarPorId(Item, "M");
+    this.submitted = false;
+    this.FormRegistro.markAsUntouched();  // funcionalidad ya incluida en el FormRegistro.Reset…
   }
  
   // grabar tanto altas como modificaciones
