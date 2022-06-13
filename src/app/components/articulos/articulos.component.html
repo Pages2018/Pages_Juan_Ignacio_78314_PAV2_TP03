@@ -197,9 +197,13 @@
               <div class="text-danger" *ngIf="FormRegistro.controls['FechaAlta'].hasError('required')">
                           Dato requerido.
               </div>
-      <div class="text-danger" *ngIf="FormRegistro.controls['FechaAlta'].hasError('required')">
-          Dato requerido.
-      </div>
+              <div
+              class="text-danger"
+              *ngIf="FormRegistro.controls['FechaAlta'].hasError('pattern')"
+            >
+              Dato fecha, formato dd/mm/aaaa.
+            </div>  
+    
         </div>
     </div>
 
@@ -228,8 +232,9 @@
 </div>
 
 <!--texto: Revisar los datos ingresados...-->
-<div id="divMsjFormRegistro" class="row alert alert-danger" *ngIf="false">
-    <i class="fa fa-exclamation-sign"></i>{{Mensajes['RD']}}
+<!--texto: Revisar los datos ingresados...-->
+<div id="divMsjFormRegistro" class="row alert alert-danger" *ngIf="FormRegistro.invalid">
+<i class="fa fa-exclamation-sign"></i>{{Mensajes['RD']}}
 </div>
 
 </form>
