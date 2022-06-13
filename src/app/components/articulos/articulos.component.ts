@@ -41,17 +41,24 @@ export class ArticulosComponent implements OnInit {
   FormRegistro = new FormGroup({
     IdArticulo: new FormControl(0),
     Nombre: new FormControl('', [
-      Validators.required
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(55),
     ]),
+
     Precio: new FormControl(null, [
-      Validators.required
+      Validators.required,
+      Validators.pattern('[0-9]{1,7}'),
     ]),
     Stock: new FormControl(null, [
-      Validators.required
+      Validators.required,
+      Validators.pattern('[0-9]{1,7}'),
     ]),
     CodigoDeBarra: new FormControl('', [
-      Validators.required
+      Validators.required,
+      Validators.pattern('[0-9]{13}'),
     ]),
+
     IdArticuloFamilia: new FormControl('', [Validators.required]),
     FechaAlta: new FormControl('', [
       Validators.required

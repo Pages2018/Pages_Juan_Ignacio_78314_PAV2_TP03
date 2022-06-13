@@ -110,9 +110,14 @@
               <div class="text-danger" *ngIf="FormRegistro.controls['Nombre'].hasError('required')">
                           Dato requerido.
               </div>
-      <div class="text-danger" *ngIf="FormRegistro.controls['Nombre'].hasError('required')">
-          Dato requerido.
-      </div>
+            <div
+              class="text-danger"
+              *ngIf="
+                FormRegistro.controls['Nombre'].hasError('minlength') ||
+                FormRegistro.controls['Nombre'].hasError('maxlength')
+              ">
+              Dato texto, 4 a 55 caracteres.
+            </div>
         </div>
     </div>
 
@@ -126,10 +131,11 @@
               <div class="text-danger" *ngIf="FormRegistro.controls['Precio'].hasError('required')">
                           Dato requerido.
               </div>
-      <div class="text-danger" *ngIf="FormRegistro.controls['Precio'].hasError('required')">
-          Dato requerido.
-      </div>
+                <div class="text-danger" *ngIf="FormRegistro.controls['Precio'] .hasError('pattern')">
+                    Dato numérico, 1 a 7 dígitos.
+                </div>
         </div>
+        
     </div>
 
 
